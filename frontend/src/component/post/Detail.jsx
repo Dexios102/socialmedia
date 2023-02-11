@@ -62,7 +62,7 @@ const PostDetail = () => {
                                     <div className="d-flex justify-content-start align-item-center">
                                         <textarea id="comment__input"
                                             className="form-control p-1"
-                                            placeholder="Your Comment Here..."
+                                            placeholder="Enter your comment here.."
                                             style={{ border: "none", height: "2em" }}
                                             onChange={(e) => setCommentBody(e.target.value)}
                                             value={commentBody} />

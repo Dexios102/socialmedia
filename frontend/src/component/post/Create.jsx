@@ -6,6 +6,9 @@ import { UserContext } from '../../context/UserContext'
 import { createPost } from './actions';
 import FormData from 'form-data';
 import { useNavigate } from 'react-router-dom'
+
+
+
 // post create bar
 const CreatePost = (props) => {
     const [caption, setCaption] = useState('');
@@ -49,10 +52,10 @@ const CreatePost = (props) => {
             <div className="create__post">
                 <img src={props.avatar ? props.avatar : UserImage} alt="avtar" className="img-fluid me-auto" style={{ width: "2.7em", height: "2.7em", borderRadius: "50%" }} />
 
-                <textarea className="form-control" placeholder="Create Post" id="create__input" onChange={e => setCaption(e.target.value)} />
+                <textarea className="form-control" placeholder="Upload something..." id="create__input" onChange={e => setCaption(e.target.value)} />
 
                 <label htmlFor="upload__image">
-                    <img src={UploadImage} alt="upload" id="post__image" style={{ height: "2em", width: "2em", marginLeft: "0.3em" }} />
+                    <img src={UploadImage} alt="upload" id="post__image" style={{ height: "2em", width: "2em", marginLeft: "0.3em", }} />Upload
                 </label>
 
                 <input type="file" accept="image/*" id="upload__image" style={{ display: "none" }} onChange={handleImageUpload} />
@@ -73,7 +76,7 @@ const CreatePost = (props) => {
             }
 
             <button className="btn__primary" id="post__button" onClick={postData}>
-                {loading ? "Posting" : "Post"}  </button>
+                {loading ? "Posting" : "POST"}  </button>
         </div>
     )
 }
