@@ -38,7 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'feed',
-    'userauth',
+    'usersauth',
     'rest_framework',
     'rest_framework.authtoken',
     'corsheaders',
@@ -97,7 +97,7 @@ DATABASES = {
     }
 }
 
-AUTH_USER_MODEL = 'userauth.User'
+AUTH_USER_MODEL = 'usersauth.User'
 
 # JWT Configuration
 REST_FRAMEWORK = {
@@ -166,7 +166,7 @@ REST_FRAMEWORK = {
 }
 
 REST_AUTH_SERIALIZERS = {
-'TOKEN_SERIALIZER': 'accounts.token.TokenSerializer',
+'TOKEN_SERIALIZER': 'usersauth.access.TokenSerializer',
 }
 
 SITE_ID = 1
