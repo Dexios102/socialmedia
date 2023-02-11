@@ -3,7 +3,7 @@ import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
 import { UserContext } from '../context/UserContext';
 import Logo from '../assets/UPLOADBOXLOGO.png';
-import { BsPersonCircle } from "react-icons/bs";
+import { BsDoorOpenFill } from "react-icons/bs";
 
 
 /* import { useFormik } from 'formik' */
@@ -36,26 +36,12 @@ const Navbar = () => {
                 <div className="collapse navbar-collapse" id="navbarNavDropdown">
 
                     <ul className="ms-auto navbar-nav">
-                        <li className="nav-item dropdown">
-                            <a className="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                <BsPersonCircle id="user_icon" />
-                            </a>
-                            {user.data ?
-                                <ul className="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                                    <li><Link className="dropdown-item" to="/logout">Logout</Link></li>
-                                </ul> :
-                                <ul className="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                                    <li><Link className="dropdown-item" to="/login">Login</Link></li>
-                                    <li><Link className="dropdown-item" to="/signup">Signup</Link></li>
-                                </ul>
-                            }
-
-                        </li>
+                        <a className="btn btn-primary p-1" id="logout__button" to="/logout"><BsDoorOpenFill id="logout__icon" /> LOGOUT</a>
                     </ul>
                 </div>
 
             </div>
-        </nav>
+        </nav >
     )
 }
 

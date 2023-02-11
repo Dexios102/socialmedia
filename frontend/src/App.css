@@ -120,16 +120,30 @@ font-family: 'Helvetica', sans-serif;
 #comment_button {
   float: right;
   width:30%;
-  height: 45px;
+  height: 35px;
   margin:0.9em auto;
-  margin-bottom: 0;
-  margin-top: 20px;
+  margin-top: 3% !important;
   opacity: 90%;
   background-color: #2b5e9f;
   font-family: 'Helvetica', sans-serif;
-  font-size: 20px;
+  font-size: 15px;
 }
 
+#logout__button {
+  width:max-content;
+  height:max-content;
+  color: black;
+  background-color: white;
+  font-weight: bold;
+  font-family: 'Helvetica', sans-serif;
+  font-size: 12px;
+  padding: 15px !important;
+}
+
+#logout__icon {
+  font-size: 35px;
+  color: #2b5e9f;
+}
 .loginpage_text {
   font-family: 'Source Open Sans', sans-serif;
   font-weight: bold;
@@ -260,7 +274,6 @@ font-size: 20px;
 }
 .post__body p {
   margin: 0.5em 0 0.3em 0;
-  margin-top: -10px;
   font-family: 'Ubuntu';
   color: #464545;
   font-size: 0.9em;
@@ -369,6 +382,9 @@ font-family: 'Helvetica', sans-serif;
   margin-top: -11px;
 }
 
+.comments {
+  margin-top: 13% !important;
+}
 #post_edit {
   color: #006400 !important;
   font-size: 23px;
