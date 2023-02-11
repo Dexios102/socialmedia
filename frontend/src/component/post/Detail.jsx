@@ -67,8 +67,8 @@ const PostDetail = () => {
                                             onChange={(e) => setCommentBody(e.target.value)}
                                             value={commentBody} />
                                     </div>
-                                    <button className="btn__primary" id="comment_button"
-                                        onClick={handleComment}>COMMENT
+                                    <button className="btn btn-primary" id="comment_button"
+                                        onClick={handleComment}>Submit Comment
                                     </button>
                                     {/* show all comments of post */}
                                     {comments.map((comment) => {

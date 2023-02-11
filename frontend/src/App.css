@@ -514,7 +514,7 @@ font-family: 'Helvetica', sans-serif;
 
 #post__mainimage
 {
-  width: 50% !important;
+  width: 100% !important;
   border-radius: 25px !important;
 }
 #editprofile_button {
