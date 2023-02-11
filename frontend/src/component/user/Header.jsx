@@ -6,35 +6,15 @@ import { useFormik } from 'formik';
 import FormData from 'form-data';
 
 const ProfileHeader = (props) => {
-    let isProfilePage = useLocation().pathname;
-
-    const [image, setImage] = useState(''); // image use to update avatar
-
+    /* let isProfilePage = useLocation().pathname; */
+    const [image, setImage] = useState(''); 
     const [updated, setUpdated] = useState(false);
     const [loading, setLoading] = useState(false);
-
-    const [followStatus, setFollowStatus] = useState(props.followState); // follow status of current user
-
-    // const [user,setUser] = useState({
-    //     username:null,
-    //     email:null,
-    //     bio:null,
-    //     avatar:null,
-    //     })
-
-    // handle image selection
+    /* const [followStatus, setFollowStatus] = useState(props.followState); */
     const handleImageUpload = (e) => {
         if (e.target.files.length) {
-            let img = e.target.files[0]; // raw image used for posting data
+            let img = e.target.files[0];
             setImage(img);
-        }
-    }
-
-    // this will handle the follow unfollow of user
-    const handleFollow = async () => {
-        const data = await followUser(props.userId)
-        if (data) {
-            setFollowStatus(!followStatus)
         }
     }
 
@@ -67,31 +47,6 @@ const ProfileHeader = (props) => {
 
     return (
         <div className="d-flex justify-content-start align-items-center">
-            <img className="img-fluid" id="Profile_Avatar"
-                src={props.avatar ? props.avatar : UserLogo}
-                alt="profile" />
-            <div className="ms-4">
-                <span id="User_Name">{props.username}</span>
-                {
-                    isProfilePage === '/profile' ?
-                        <button className="btn__primary ms-2"
-                            style={{ padding: "0.2em 0.3em" }}
-                            data-bs-toggle="modal"
-                            data-bs-target="#exampleModal" id="Edit_Profile"> Edit Profile </button>
-                        :
-                        <button
-                            className="btn__primary ms-2"
-                            style={{ padding: "0.2em 0.3em" }}
-                            onClick={handleFollow}>
-                            {followStatus ? "Unfollow" : "Follow"}
-                        </button>
-                }
-                <br />
-                <span className='Profile'>
-                    {props.total_followers} Followers | {props.total_posts} Posts</span>
-                <p className='Profile'><i>{props.bio}</i></p>
-            </div>
-
             {/* update form modal */}
             <div className="modal fade" id="exampleModal" aria-labelledby="exampleModalLabel" aria-hidden="true">
                 <div className="modal-dialog">

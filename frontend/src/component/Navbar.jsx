@@ -36,7 +36,7 @@ const Navbar = () => {
                 {/* <div className="collapse navbar-collapse" id="navbarNavDropdown"> */}
 
                     <ul className="ms-auto navbar-nav">
-                        <a className="btn btn-primary p-1" id="logout__button" to="/logout"><BsDoorOpenFill id="logout__icon" /> LOGOUT</a>
+                        <Link className="btn btn-primary p-1" id="logout__button" to="/logout"><BsDoorOpenFill id="logout__icon" /> LOGOUT</Link>
                     </ul>
                 {/* </div> */}
 
