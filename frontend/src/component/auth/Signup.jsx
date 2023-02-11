@@ -36,7 +36,7 @@ const Signup = () => {
                     <div className="col-md-4 mx-auto">
                         <form onSubmit={formik.handleSubmit} id="login__content" className="card p-2" style={{ background: "#fff" }}>
                             <h1 className='loginpage_text' style={{ textAlign: "center" }}>
-                                CREATE NEW ACCOUNT              </h1>
+                                Create a New Account              </h1>
                             <input type="text" id="login__input" name="username" className="form-control" placeholder="Username" onChange={formik.handleChange} value={formik.values.username} />
                             <input type="email" id="login__input" name="email" className="form-control mt-2" placeholder="Email" onChange={formik.handleChange} value={formik.values.email} />
                             <input type="password" id="login__input" name="password1" className="form-control mt-2" placeholder="Password" onChange={formik.handleChange} value={formik.values.password1} />
@@ -45,8 +45,9 @@ const Signup = () => {
                             <button type="submit" id="logoutpage_button" className="btn__primary">
                                 {loading ? "Signing Up" : "SIGNUP"}
                             </button>
-                            <Link to="/login" id="Create_Account" className="mt-2 text-dark">Login</Link>
+
                         </form>
+                        <Link href to="/login" id="link__text" className="form-label"><u>Already have an account? Login now.</u></Link>
                     </div>
                 </div>
             </div>

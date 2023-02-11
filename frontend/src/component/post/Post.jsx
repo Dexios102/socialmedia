@@ -51,9 +51,6 @@ const Post = (props) => {
                 <Link to={"/post/" + props.id} className="ms-4">
                     <a className='btn btn-success' id="action__button">Comment</a>
                 </Link>
-                <Link to={"/post/delete" + props.id} className="ms-4">
-                    <a className='btn btn-danger' id="action__button">Delete Post</a>
-                </Link>
 
             </div>
         </div>

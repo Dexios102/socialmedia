@@ -38,7 +38,7 @@ deactivate () {
 # unset irrelevant variables
 deactivate nondestructive
 
-VIRTUAL_ENV="C:\Users\toxic\Desktop\smedia\backend\env"
+VIRTUAL_ENV="C:\Users\ASUS\OneDrive\Documents\socialmedia\backend\env"
 export VIRTUAL_ENV
 
 _OLD_VIRTUAL_PATH="$PATH"
