@@ -5,6 +5,8 @@ import { loginUser } from './actions'
 import { UserContext } from '../../context/UserContext'
 import { useNavigate } from 'react-router-dom';
 import { useFormik } from 'formik';
+import { BsFillLockFill } from "react-icons/bs";
+
 
 const Login = () => {
   const [err, setErr] = useState(false);
@@ -36,8 +38,8 @@ const Login = () => {
         <div className="row">
           <div className="col-md-4 mx-auto">
             <form onSubmit={formik.handleSubmit} id="login__content" className="card p-2" style={{ background: "#fff" }}>
-              <h1 className='loginpage_text' style={{ textAlign: "center" }}>
-                LOGIN
+              <h1 className='loginpage_text' style={{ textAlign: "left" }}>
+                Login
               </h1>
               <input type="text" className="form-control" id="login__input" name="username" placeholder="Username"
                 onChange={formik.handleChange} value={formik.values.username} />
@@ -47,8 +49,9 @@ const Login = () => {
               <button type="submit" id="logoutpage_button" className="btn__primary">
                 {loading ? "Loging In" : "LOGIN"}
               </button>
-              <Link to="/signup" id="Create_Account" className="mt-2 text-dark">Create New Account</Link>
+
             </form>
+            <Link href to="/signup" id="link__text" className="form-label"><u>Create a New Account</u></Link>
           </div>
         </div>
       </div>
