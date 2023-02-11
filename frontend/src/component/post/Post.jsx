@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
 import UserLogo from '../../assets/user.png';
 import { Link } from 'react-router-dom';
-import { BsFillChatSquareDotsFill } from "react-icons/bs";
+import { BsFillChatFill } from "react-icons/bs";
 import { BsPencilSquare } from "react-icons/bs";
-import { BsTrashFill } from "react-icons/bs";
+import { BsTrash } from "react-icons/bs";
 
 const Post = (props) => {
     const [liked, setLiked] = useState(false); //like post from List and all
@@ -36,8 +36,9 @@ const Post = (props) => {
 
             <div className="post__body">
                 <p>{props.caption}</p>
-
-                {props.image && <img className="img-fluid" src={props.image} alt="" style={{ width: "100%", height: "21em" }} />}
+            </div>
+            <div className="post__image">
+                {props.image && <img className="img-fluid" id="post__mainimage" src={props.image} alt="" style={{ width: "100%", height: "25em" }} />}
 
             </div>
 
@@ -48,23 +49,12 @@ const Post = (props) => {
                 </span>
 
                 <Link to={"/post/" + props.id} className="ms-4">
-                    <BsFillChatSquareDotsFill id="post_comment" />
+                    <a className='btn btn-success' id="action__button">Comment</a>
                 </Link>
-                {/* show edit btn if showEditBtn is true*/}
-                {
-                    props.showEditBtn &&
-                    <Link to={"/post/edit/" + props.id} className="ms-4">
-                        <BsPencilSquare id="post_edit" />
-                    </Link>
-                }
+                <Link to={"/post/delete" + props.id} className="ms-4">
+                    <a className='btn btn-danger' id="action__button">Delete Post</a>
+                </Link>
 
-                {/* show delete btn if showDeleteBtn is true and call deletePost when clickd */}
-                {
-                    props.showDeleteBtn &&
-                    <span onClick={deletePost} className="ms-4">
-                        <BsTrashFill id="post_delete" />
-                    </span>
-                }
             </div>
         </div>
     )

@@ -62,13 +62,13 @@ const PostDetail = () => {
                                     <div className="d-flex justify-content-start align-item-center">
                                         <textarea id="comment__input"
                                             className="form-control p-1"
-                                            placeholder="Your Comment Here..."
+                                            placeholder="Enter your comment here.."
                                             style={{ border: "none", height: "2em" }}
                                             onChange={(e) => setCommentBody(e.target.value)}
                                             value={commentBody} />
                                     </div>
-                                    <button className="btn__primary" id="comment_button"
-                                        onClick={handleComment}>COMMENT
+                                    <button className="btn btn-primary" id="comment_button"
+                                        onClick={handleComment}>Submit Comment
                                     </button>
                                     {/* show all comments of post */}
                                     {comments.map((comment) => {

@@ -2,20 +2,15 @@
 @import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@700;900&display=swap');
 
 section  {
-background: #F5F5F5;
+  background-color: #eaeaea;
 min-height: 100vh;
 max-height: max-content;
 }
 
-section > div {
-  background: #f4f8fc;
-}
-
-#main__container {
-  margin-top: 3em;
-  background-color: #F5F5F5;
-  padding: 25px;
-  border-radius: 15px;
+.main {
+  width: 100%;
+  text-align: center;
+  background-color: #eaeaea;
 }
 
 a {
@@ -39,7 +34,7 @@ font-family: 'Roboto', sans-serif;
 #searchbar::placeholder {
   color: rgb(202, 202, 202);
   font-size: 16px;
-  font-family: 'Roboto', sans-serif;
+ font-family: 'Helvetica', sans-serif;
 }
 
 #search_icon {
@@ -60,9 +55,14 @@ height: auto;
 background: #fff;
 width: 80%;
 margin: auto;
+margin-top: 50px !important;
 padding: 15px;
-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-border-radius: 10px;
+box-shadow: rgba(6, 24, 44, 0.4) 0px 0px 0px 2px, rgba(6, 24, 44, 0.65) 0px 4px 6px -1px, rgba(255, 255, 255, 0.08) 0px 1px 0px inset;
+border-radius: 5px;
+}
+
+#post__caption {
+  margin-top: -45%;
 }
 
 .create__post {
@@ -71,21 +71,23 @@ width: 100%;
 display: flex;
 justify-content: space-between;
 align-items: center;
+
 }
 
 #create__input {
-height:5px;
-width:84.5%;
-border:none;
-font-weight:500;
 font-size: 14px;
+width: 87%;
 }
 
+
 #comment__input {
-width:100%;
+  font-size: 14px;
+  height: 100px !important;
+  width: 100% !important;
+  font-family: 'Helvetica', sans-serif;
 border: 1px solid rgb(193, 193, 193) !important;
 font-weight:500;
-font-size: 14px;
+font-size: 12px;
 }
 
 #comment__input::placeholder {
@@ -96,7 +98,7 @@ font-size: 14px;
 #create__input::placeholder {
   color: rgb(117, 117, 117);
   font-size: 16px;
-  font-family: 'Source Sans Pro', sans-serif;
+  
 }
 
 #search__input {
@@ -114,21 +116,36 @@ font-size: 14px;
 #search__label {
   margin-top: 26px;
   font-size: 16px;
-  font-family: 'Source Sans Open', sans-serif;
+font-family: 'Helvetica', sans-serif;
   margin-left: 5px;
 }
 #comment_button {
-  background-color: #006400;
-  font-family: "Source Sans Open", sans-serif;
-  font-weight: bold;
-  border-radius: 5px !important;
-  padding: 10px !important;
-  font-size: 14px;
-  margin-bottom: 5px;
-  margin-top: 10px;
-  width: 100%;
+  float: right;
+  width:30%;
+  height: 35px;
+  margin:0.9em auto;
+  margin-top: 3% !important;
+  opacity: 90%;
+  background-color: #2b5e9f;
+  font-family: 'Helvetica', sans-serif;
+  font-size: 15px;
 }
 
+#logout__button {
+  width:max-content;
+  height:max-content;
+  color: black;
+  background-color: white;
+  font-weight: bold;
+  font-family: 'Helvetica', sans-serif;
+  font-size: 12px;
+  padding: 15px !important;
+}
+
+#logout__icon {
+  font-size: 35px;
+  color: #2b5e9f;
+}
 .loginpage_text {
   font-family: 'Outfit', sans-serif;
   font-weight: bold;
@@ -137,7 +154,7 @@ font-size: 14px;
 }
 #logoutpage_button {
   background-color: #006400;
-  font-family: "Source Sans Open", sans-serif;
+  font-family: 'Helvetica', sans-serif;
   font-weight: bold;
   border-radius: 5px !important;
   padding: 10px !important;
@@ -154,7 +171,7 @@ font-size: 14px;
 
 #Create_Account {
   background-color: rgb(40, 40, 179);
-  font-family: "Source Sans Open", sans-serif;
+  font-family: 'Helvetica', sans-serif;
   border-radius: 5px !important;
   padding: 10px !important;
   font-size: 12px;
@@ -167,7 +184,7 @@ font-size: 14px;
 }
 #logoutpage_text {
   font-size: 24px;
-  font-family: 'Source Sans Open', sans-serif;
+font-family: 'Helvetica', sans-serif;
   font-weight: bold;
   padding: 10px;
   margin-bottom: -5px;
@@ -187,16 +204,23 @@ background: #394dbe;
 }
 
 #post__button {
-width:100%;
+width:20%;
+height: 45px;
 margin:0.9em auto;
 margin-bottom: 0;
 margin-top: 20px;
-background-color: #006400;
-font-family: 'Segoe UI', sans-serif;
+opacity: 90%;
+background-color: #2b5e9f;
 font-weight: bold;
-font-size: 15px;
-padding: 8px;
-border-radius: 20px;
+font-family: 'Helvetica', sans-serif;
+font-size: 20px;
+}
+
+#action__button {
+opacity: 90%;
+font-family: 'Helvetica', sans-serif;
+font-size: 13px;
+font-weight: bold;
 }
 
 #post_icon {
@@ -210,11 +234,13 @@ border-radius: 20px;
 .post__card {
   width: 80%;
   margin:1.5em auto;
-  background: #fff;
+  
   padding: 0.3em;
 }
 
-.post__header,.post__action {
+.post__header,.post__action, .post__body {
+ 
+  background-color: white;
   display: flex;
   justify-content: flex-start;
   align-items:center;
@@ -231,7 +257,7 @@ border-radius: 20px;
   padding: 15px;
   font-size: 17px;
   font-weight: bold;
-  font-family: 'Source Sans Pro', sans-serif;
+  font-family: 'Helvetica', sans-serif;
 }
 
 #avatar {
@@ -241,7 +267,7 @@ border-radius: 20px;
   margin-top: 0px !important;
   padding: 10px;
   font-size: 18px;
-  font-family: 'Source Sans Pro', sans-serif;
+  font-family: 'Helvetica', sans-serif;
 }
 
 .post__action {
@@ -251,13 +277,13 @@ border-radius: 20px;
 
 .post__card {
   background-color: white;
-  border: 1px solid 	#F5F5F5;
-  border-radius: 10px;
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  padding: 25px;
+  box-shadow: rgba(6, 24, 44, 0.4) 0px 0px 0px 2px, rgba(6, 24, 44, 0.65) 0px 4px 6px -1px, rgba(255, 255, 255, 0.08) 0px 1px 0px inset;
+  border-radius: 5px;
+
 }
 .post__body p {
   margin: 0.5em 0 0.3em 0;
-  margin-top: -10px;
   font-family: 'Ubuntu';
   color: #464545;
   font-size: 0.9em;
@@ -280,7 +306,7 @@ border-radius: 20px;
 .loader {
   border: 0.3em solid #f3f3f3; /* Light grey */
   border-top: 0.3em solid #445ef3; /* Blue */
-  border-radius: 50%;
+  border-radius: 5%;
   width: 5em;
   height: 5em;
   animation: spin 2s linear infinite;
@@ -309,7 +335,7 @@ border-radius: 20px;
 #sidebar_link {
   padding: 10px;
   border-radius: 5px;
-  font-family: 'Roboto', sans-serif;
+ font-family: 'Helvetica', sans-serif;
 }
 #sidebar_link:hover {
   background-color: 	#E8E8E8;
@@ -328,7 +354,7 @@ border-radius: 20px;
 
 .Menu {
   font-size: 24px;
-  font-family: 'Segoe UI', sans-serif;
+ font-family: 'Helvetica', sans-serif;
   font-weight: bold;
   padding: 10px;
   margin-bottom: -5px;
@@ -337,7 +363,7 @@ border-radius: 20px;
 
 #Logout__Message {
   font-size: 25px;
-  font-family: 'Source Sans Open', sans-serif;
+font-family: 'Helvetica', sans-serif;
   font-weight: bold;
   padding: 10px;
   margin-bottom: -5px;
@@ -361,11 +387,14 @@ border-radius: 20px;
 }
 
 #post_comment {
-  color: #006400 !important;
-  font-size: 22px;
-  margin-top: -6px;
+  color: #2b5e9f !important;
+  font-size: 25px;
+  margin-top: -11px;
 }
 
+.comments {
+  margin-top: 13% !important;
+}
 #post_edit {
   color: #006400 !important;
   font-size: 23px;
@@ -408,7 +437,7 @@ border-radius: 20px;
 
 .Edit {
   font-size: 24px;
-  font-family: 'Segoe UI', sans-serif;
+ font-family: 'Helvetica', sans-serif;
   font-weight: bold;
   margin-bottom: -5px;
   color: #8c8c8c;
@@ -419,7 +448,7 @@ border-radius: 20px;
   border-radius: 5px;
   font-family: 'Source Open Sans', sans-serif;
   margin-bottom: 10px;
-  font-family: 'Segoe UI', sans-serif;
+ font-family: 'Helvetica', sans-serif;
 }
 
 #Edit_CaptionText {
@@ -436,7 +465,7 @@ border-radius: 20px;
 
 #Edit_Profile {
   background-color: #006400;
-  font-family: "Source Sans Open", sans-serif;
+  font-family: 'Helvetica', sans-serif;
   border-radius: 5px !important;
   padding: 10px !important;
   font-size: 14px;
@@ -445,7 +474,7 @@ border-radius: 20px;
 
 #search__button {
   background-color: #006400;
-  font-family: "Source Sans Open", sans-serif;
+  font-family: 'Helvetica', sans-serif;
   border-radius: 5px !important;
   padding: 10px !important;
   font-size: 14px;
@@ -455,12 +484,12 @@ border-radius: 20px;
 
 
 #User_Name {
-  font-family: 'Source Sans Open', sans-serif;
+font-family: 'Helvetica', sans-serif;
   font-size: 20px;
 }
 
 .Profile {
-  font-family: 'Source Sans Open', sans-serif;
+font-family: 'Helvetica', sans-serif;
   font-size: 16px;
 }
 
@@ -480,11 +509,17 @@ border-radius: 20px;
 
 #post__image {
   color: #006400 !important;
+  font-size: 18px;
 }
 
+#post__mainimage
+{
+  width: 100% !important;
+  border-radius: 25px !important;
+}
 #editprofile_button {
   background-color: #006400;
-  font-family: "Source Sans Open", sans-serif;
+  font-family: 'Helvetica', sans-serif;
   font-weight: bold;
   border-radius: 5px !important;
   padding: 10px !important;
