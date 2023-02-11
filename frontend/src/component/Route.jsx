@@ -1,5 +1,5 @@
 import {Outlet} from 'react-router-dom';
-import Login from '.././component/auth/Login';
+import Login from './auth/Login';
 import {useContext} from 'react';
 import {UserContext} from '../context/UserContext'
 

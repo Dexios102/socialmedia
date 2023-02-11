@@ -23,7 +23,7 @@ export const getPosts = async (nextPageURL) => {
 
 // get post 
 export const getPost = async (postId) =>{
-    let response = await fetch(`${ROOT_URL}/feed/${postId}`,{
+    let response = await fetch(`${ROOT_URL}/posts/${postId}`,{
         method:"GET",
         headers:{
             'Accept':'application/json',
@@ -52,7 +52,7 @@ export const createPost = async (payload) => {
 
 // delete post
 export const deletePost = async (postId) => {
-    const response = await fetch(`${ROOT_URL}/feed/${postId}/`,{
+    const response = await fetch(`${ROOT_URL}/posts/${postId}/`,{
         method:"DELETE",
         headers:{
             'Authorization': 'Token ' + authToken,
@@ -68,7 +68,7 @@ export const deletePost = async (postId) => {
 // edit post
 // get the editing post 
 export const getEditingPost = async (postId) => {
-    let response = await fetch(`${ROOT_URL}/feed/edit/${postId}/`,{
+    let response = await fetch(`${ROOT_URL}/posts/edit/${postId}/`,{
         method:"GET",
         headers:{
             'Accept':'application/json',
@@ -85,7 +85,7 @@ export const getEditingPost = async (postId) => {
 
 // send the PATCH request
 export const editPost = async (payload,postId) => {
-    let url = `${ROOT_URL}/feed/edit/${postId}/`;
+    let url = `${ROOT_URL}/posts/edit/${postId}/`;
     let response = await fetch(url,{
         method:"PATCH",
         headers:{
@@ -99,7 +99,7 @@ export const editPost = async (payload,postId) => {
 
 // like post 
 export const likePost = async (postId) => {
-    const response = await fetch(`${ROOT_URL}/feed/like/${postId}/`,{
+    const response = await fetch(`${ROOT_URL}/posts/like/${postId}/`,{
         method:"GET",
         headers:{
             'Authorization': 'Token ' + authToken,
@@ -113,7 +113,7 @@ export const likePost = async (postId) => {
 }
 
 export const postComment = async (payload) => {
-    const response = await fetch(`${ROOT_URL}/feed/comment/`,{
+    const response = await fetch(`${ROOT_URL}/posts/comment/`,{
         method:"POST",
         headers:{
             'Content-Type':'application/json',
