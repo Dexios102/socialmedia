@@ -8,6 +8,8 @@ max-height: max-content;
 }
 
 .main {
+  width: 100%;
+  text-align: center;
   background-color: #eaeaea;
 }
 
@@ -212,6 +214,13 @@ background-color: #2b5e9f;
 font-weight: bold;
 font-family: 'Helvetica', sans-serif;
 font-size: 20px;
+}
+
+#action__button {
+opacity: 90%;
+font-family: 'Helvetica', sans-serif;
+font-size: 13px;
+font-weight: bold;
 }
 
 #post_icon {
@@ -503,6 +512,11 @@ font-family: 'Helvetica', sans-serif;
   font-size: 18px;
 }
 
+#post__mainimage
+{
+  width: 50% !important;
+  border-radius: 25px !important;
+}
 #editprofile_button {
   background-color: #006400;
   font-family: 'Helvetica', sans-serif;
