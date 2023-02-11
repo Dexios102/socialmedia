@@ -14,7 +14,6 @@ const PostDetail = () => {
     const [comments, setComments] = useState([]);
 
     useEffect(async () => {
-        // get the post
         let post_ = await getPost(postId);
         setPost(post_);
         setComments(post_.comments);
@@ -23,8 +22,6 @@ const PostDetail = () => {
         }
     }, [])
 
-    // like the specific post
-    // on click of like btn handleLike props is called and it will call this function
     const postLike = async (postId) => {
         await likePost(postId);
     }

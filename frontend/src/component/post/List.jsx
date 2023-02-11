@@ -10,7 +10,6 @@ const PostList = () => {
     const [nextPage,setNextPage] = useState('');
 
     useEffect(() =>{
-        // fetch post
         const fetchData = async () =>{
             setLoading(true);
             let response = await getPosts();
@@ -22,17 +21,13 @@ const PostList = () => {
         }
     fetchData()},[])
 
-    // fetch next page for infinite scroll  set the next url and start fetch
     const fetchNextPage = async () => {
         let response = await getPosts(nextPage);
         if(response) {
             setNextPage(response.next)
-            setPosts(posts.concat(response.results))// add previous post + new fetch post
+            setPosts(posts.concat(response.results))
         }
     }
-
-    // like the specific post
-    // on click of like btn handleLike props is called and it will call this function
     const postLike = async (postId) => {
         await likePost(postId);
     }

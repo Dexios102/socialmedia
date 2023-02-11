@@ -7,14 +7,12 @@ import { useFormik } from 'formik'
 
 
 const EditPost = () => {
-  // get post id from url
   let { postId } = useParams();
 
   const [post, setPost] = useState({}); // post state
   const [loading, setLoading] = useState(false); //loading state
   const [updating, setUpdating] = useState(false); // updating post state
 
-  // fetch post on load
   useEffect(async () => {
     setLoading(true)
     let post_ = await getEditingPost(postId);
@@ -27,14 +25,12 @@ const EditPost = () => {
         }
       }
     } else {
-      // if response is null its 404 so set post to 404 and show Restricted msg
       setPost(404)
       setLoading(false)
     }
 
   }, [])
 
-  // formik to handle update post form 
   let formik = useFormik({
     enableReinitialize: true,
     initialValues: {
@@ -60,10 +56,6 @@ const EditPost = () => {
       <div className="container" id="main__container">
         <div className="row">
           <div className="col-md-5 mx-auto">
-            {/* if loading show loading component 
-        if setPost is 404 then show restricted msg
-        else show edit form
-        */}
             {
               loading ? <Loader /> :
                 <div>

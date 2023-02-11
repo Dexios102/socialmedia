@@ -5,7 +5,6 @@ import { loginUser } from './actions'
 import { UserContext } from '../../context/UserContext'
 import { useNavigate } from 'react-router-dom';
 import { useFormik } from 'formik';
-import { BsFillLockFill } from "react-icons/bs";
 
 
 const Login = () => {
