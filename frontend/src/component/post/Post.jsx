@@ -1,19 +1,16 @@
 import React, { useState } from 'react';
 import UserLogo from '../../assets/user.png';
 import { Link } from 'react-router-dom';
-import { BsFillChatFill } from "react-icons/bs";
-import { BsPencilSquare } from "react-icons/bs";
-import { BsTrash } from "react-icons/bs";
+import { BsTrashFill } from "react-icons/bs";
 
 const Post = (props) => {
-    const [liked, setLiked] = useState(false); //like post from List and all
+    const [liked, setLiked] = useState(false);
     const [totalLikes, setTotalLikes] = useState(props.total_likes);
-    const [deleted, setDeleted] = useState(false) // delete post from Profile page
+    const [deleted, setDeleted] = useState(false)
 
     const likePost = () => {
         props.handleLike();
         setLiked(!liked);
-        // if liked already remove one the like
         if (liked) {
             setTotalLikes(totalLikes - 1)
         } else {
@@ -22,9 +19,8 @@ const Post = (props) => {
     }
 
     const deletePost = () => {
-        // handleDelete = props that is called in post profile component that will handle the delete api  
         props.handleDelete();
-        setDeleted(true) // fades out the deleted post 
+        setDeleted(true)
     }
 
     return (
@@ -51,6 +47,13 @@ const Post = (props) => {
                 <Link to={"/post/" + props.id} className="ms-4">
                     <a className='btn btn-success' id="action__button">Comment</a>
                 </Link>
+
+                {
+                    props.showDeleteBtn &&
+                    <span onClick={deletePost} className="ms-4">
+                        <BsTrashFill id="post_delete" />
+                    </span>
+                }
 
             </div>
         </div>

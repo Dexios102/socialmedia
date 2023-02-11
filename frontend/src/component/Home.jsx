@@ -1,6 +1,5 @@
 import React, { useContext } from 'react';
 import Navbar from './Navbar';
-import Sidebar from './post/Sidebar';
 import CreatePost from './post/Create';
 import PostList from './post/List';
 import { UserContext } from '../context/UserContext'

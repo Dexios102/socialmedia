@@ -1,7 +1,5 @@
 import React, { useState } from 'react';
-import { useLocation } from 'react-router-dom';
-import UserLogo from '../../assets/user.png'
-import { followUser, updateUser } from './actions'
+import { updateUser } from './actions'
 import { useFormik } from 'formik';
 import FormData from 'form-data';
 
@@ -47,14 +45,9 @@ const ProfileHeader = (props) => {
 
     return (
         <div className="d-flex justify-content-start align-items-center">
-            {/* update form modal */}
             <div className="modal fade" id="exampleModal" aria-labelledby="exampleModalLabel" aria-hidden="true">
                 <div className="modal-dialog">
                     <div className="modal-content">
-                        <div className="modal-header">
-                            <h5 className="Menu" id="exampleModalLabel">Edit Profile</h5>
-                            <button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                        </div>
                         <div className="modal-body">
                             <form onSubmit={formik.handleSubmit}>
                                 <input className="form-control"

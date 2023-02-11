@@ -9,22 +9,20 @@ import {UserContext} from '../../context/UserContext'
 
 const UserDetail = () => {
     const [posts,setPosts] = useState([]);
-    const [userDetail,setUserDetail] = useState({}); // fetched user value 
+    const [userDetail,setUserDetail] = useState({});
     const [loading,setLoading] = useState(false);
 
     const {userId} = useParams();
     const navigate = useNavigate();
 
-    let {user} = useContext(UserContext) // authenticated user
+    let {user} = useContext(UserContext)
     let currentUserId = user.data.user.id;
 
     
     useEffect(()=>{
-        // if user detail id == current logged in user id  redirect to profile 
         if(parseInt(userId)===currentUserId) {
             return navigate('/profile')
         }
-        // fetch the data of user detail
         const fetchUser = async () =>{
             setLoading(true);
             let response = await getUser(userId);

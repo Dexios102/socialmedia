@@ -13,7 +13,6 @@ const Profile = () => {
     const [loading, setLoading] = useState(false);
 
     useEffect(() => {
-        // fetch profile data
         const fetchProfile = async () => {
             setLoading(true);
             let response = await getProfile();
@@ -27,7 +26,6 @@ const Profile = () => {
     const Delete = async (postId) => {
         let data = await deletePost(postId)
         if (data) {
-            // remove the deleted post and set filtered posts as setPosts
             let filteredPosts = posts.filter((post) => post.id !== parseInt(postId))
             setTimeout(() => {
                 setPosts([...filteredPosts])
