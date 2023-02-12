@@ -10,7 +10,6 @@ from django.db.models import Q
 from rest_framework.parsers import FileUploadParser,MultiPartParser,FormParser
 from usersauth.serializers import UserSerializer
 
-# Create your views here.
 class PostListAPI(generics.ListCreateAPIView):
     serializer_class = PostSerializer
     pagination_class = PostPagination
@@ -18,10 +17,8 @@ class PostListAPI(generics.ListCreateAPIView):
 
     def get_queryset(self):
         user = self.request.user
-        #get the followings
         following_users = [following.id for following in user.followers.all()]
-        # check if following is 1 or more than 1 show the followers post else show all
-        if following_users != []: # if len(following_users) >= 1:
+        if following_users != []:
             return Post.objects.filter(Q(author_id__in=following_users)|
             Q(author=self.request.user)).distinct()
         return Post.objects.all()
@@ -48,7 +45,6 @@ class PostUpdateDeleteView(generics.RetrieveAPIView,mixins.UpdateModelMixin,mixi
         self.perform_destroy(instance)
         return response.Response(status=status.HTTP_204_NO_CONTENT)
 
-# comment create view
 class CommentCreateAPI(generics.CreateAPIView):
     model = Comment
     serializer_class = CommentSerializer
